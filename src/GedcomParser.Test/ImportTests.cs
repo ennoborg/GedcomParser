@@ -16,11 +16,12 @@ namespace GedcomParser.Test
             // Arrange
             var currentDir = Directory.GetCurrentDirectory();
             var baseDir = currentDir.Substring(0, currentDir.IndexOf(@"\bin\Debug"));
-            var filePath = Path.Combine(baseDir, "Resources", "StefanFamily.ged");
+            //var filePath = Path.Combine(baseDir, "Resources", "StefanFamily.ged");
             //var filePath = Path.Combine(baseDir, "Resources", "StefanFamilyAll.ged");
             //var filePath = Path.Combine(baseDir, "Resources", "Windsor.ged");
             //var filePath = Path.Combine(baseDir, "Resources", "Kennedy.ged");
             //var filePath = Path.Combine(baseDir, "Resources", "TGC551.ged");
+            var filePath = Path.Combine(@"C:\Users\ennob\Dropbox", "Untitled_1.ged");
             var fileParser = new FileParser();
 
             // Act

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -203,19 +203,32 @@ namespace GedcomParser.Services
 
 
                     // Deliberately skipped as irrelevant for our usecase
+                    case "_FSFTID":
+                    case "_MDCL":
+                    case "_MILT":
                     case "_GRP":
+                    case "AFN":
+                    case "ASSO":
+                    case "CAUS":
+                    case "CENS":
                     case "CONF":
+                    case "CREM":
                     case "DSCR":
                     case "EVEN":
                     case "FAMS":
                     case "FAMC":
+                    case "FCOM":
                     case "HIST":
                     case "NCHI":
                     case "NMR":
                     case "OBJE":
                     case "PAGE":
+                    case "PROB":
+                    case "PROP":
+                    case "REFN":
                     case "RIN":
                     case "SOUR":
+                    case "WILL":
                         break;
 
                     default:
@@ -280,17 +293,25 @@ namespace GedcomParser.Services
                         break;
 
                     // Deliberately skipped as irrelevant for our usecase
+                    case "_UID":
+                    case "ANUL":
+                    case "CENS":
                     case "CHAN":
                     case "DSCR":
                     case "EVEN":
+                    case "FACT":
                     case "FAMS":
                     case "FAMC":
                     case "HIST":
+                    case "MARB":
+                    case "MARC":
+                    case "MARL":
                     case "MARS":
                     case "NCHI":
                     case "NMR":
                     case "OBJE":
                     case "PAGE":
+                    case "REFN":
                     case "SOUR":
 
                         break;
@@ -486,6 +507,7 @@ namespace GedcomParser.Services
                     case "DATE":
                     case "PLAC":
                     case "SOUR":
+                    case "TYPE":
                         break;
 
                     default:
