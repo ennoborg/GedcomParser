@@ -480,7 +480,8 @@ namespace GedcomParser.Services
                 noteChunk = _idChunks.SingleOrDefault(c => c.Id == noteChunk.Reference);
                 if (noteChunk == null)
                 {
-                    throw new Exception($"Unable to find Note with Id='{incomingChunk.Reference}'");
+                    return "";
+                    // throw new Exception($"Unable to find Note with Id='{incomingChunk.Reference}'");
                 }
             }
 
