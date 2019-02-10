@@ -1,9 +1,14 @@
-﻿namespace GedcomParser.Entities
+﻿using System.Collections.Generic;
+
+namespace GedcomParser.Entities
 {
     public class Person
     {
         public string Id { get; set; }
-        public string Uid { get; set; }
+        public List<string> Uids { get; set; }
+        public List<Person> Children { get; set; }
+        public List<Person> Parents { get; set; }
+        public List<Person> Spouses { get; set; }
         public string IdNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -26,5 +31,7 @@
         public DatePlace Immigrated { get; set; }
         public DatePlace BecomingCitizen { get; set; }
         public DatePlace Graduation { get; set; }
+        public bool Matched { get; set; }
+        public string MatchedId { get; set; }
     }
 }

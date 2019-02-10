@@ -9,6 +9,7 @@ namespace GedcomParser.Entities
         public List<ChildRelation> ChildRelations { get; }
         public List<SpouseRelation> SpouseRelations { get; set; }
         public List<SiblingRelation> SiblingRelations { get; set; }
+        public Dictionary<string, Person> UidPersons { get; set; }
 
         public PersonContainer()
         {
@@ -16,6 +17,7 @@ namespace GedcomParser.Entities
             ChildRelations = new List<ChildRelation>();
             SpouseRelations = new List<SpouseRelation>();
             SiblingRelations = new List<SiblingRelation>();
+            UidPersons = new Dictionary<string, Person>();
         }
     }
 }

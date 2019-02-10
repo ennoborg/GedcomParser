@@ -96,13 +96,18 @@ namespace GedcomParser.Services
         private void ParseIndividual(GedcomChunk indiChunk)
         {
             var person = new Person { Id = indiChunk.Id };
+            person.Uids = new List<string>();
+            person.Children = new List<Person>();
+            person.Parents = new List<Person>();
+            person.Spouses = new List<Person>();
 
             foreach (var chunk in indiChunk.SubChunks)
             {
                 switch (chunk.Type)
                 {
                     case "_UID":
-                        person.Uid = chunk.Data;
+                        person.Uids.Add(chunk.Data);
+                        PersonContainer.UidPersons[chunk.Data] = person;
                         break;
 
                     case "ADOP":
@@ -333,6 +338,9 @@ namespace GedcomParser.Services
                     Relation = relation,
                     Note = note
                 });
+
+                parents[0].Spouses.Add(parents[1]);
+                parents[1].Spouses.Add(parents[0]);
             }
 
             // Parents / Children
@@ -343,6 +351,9 @@ namespace GedcomParser.Services
                     var childRelation = new ChildRelation { FamilyId = famChunk.Id, From = child, To = parent };
                     AddStatus(childRelation);
                     PersonContainer.ChildRelations.Add(childRelation);
+
+                    parent.Children.Add(child);
+                    child.Parents.Add(parent);
                 }
             }
 
