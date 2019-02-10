@@ -22,7 +22,7 @@ namespace GedcomTools
             //var filePath = Path.Combine(baseDir, "Resources", "Windsor.ged");
             //var filePath = Path.Combine(baseDir, "Resources", "Kennedy.ged");
             //var filePath = Path.Combine(baseDir, "Resources", "TGC551.ged");
-            var filePath1 = Path.Combine(@"C:\Users", userDir, "Dropbox", "Untitled_5.ged");
+            var filePath1 = Path.Combine(@"C:\Users", userDir, "Dropbox", "Untitled_1.ged");
             var filePath2 = Path.Combine(@"C:\Users", userDir, "Documents", "fs.ged");
 
             var fileParser1 = new FileParser();
